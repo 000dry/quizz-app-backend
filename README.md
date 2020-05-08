@@ -1,14 +1,14 @@
-# GET STARTED
+### GET STARTED
 
 In root of project:
 
 ```npm i```
 
-# SERVERLESS YAML
+### SERVERLESS YAML
 
 Read this file as a manifest of our lambda functions, how they are set up, their permissions and their DB interactions
 
-# TEST CRUD LOCALLY:
+### TEST CRUD LOCALLY:
 
 - always run create first:
     ```serverless invoke local --function get --path mocks/get-event.json```
@@ -20,6 +20,6 @@ Read this file as a manifest of our lambda functions, how they are set up, their
     ```serverless invoke local --function {event} --path mocks/get-event.json```
 
 
-# DEBUG
+### DEBUG
 
 ```handler.js``` is where our requests come and go - console.log() out from there as all error responses are currently being smushed into 500s

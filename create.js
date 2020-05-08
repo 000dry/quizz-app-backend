@@ -18,6 +18,6 @@ export const main = handler(async (event, context) => {
   };
   //post payload to db
   await dynamoDb.put(params);
-  //return Item data 
+  //return Item data
   return params.Item;
 });

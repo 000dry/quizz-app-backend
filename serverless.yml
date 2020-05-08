@@ -73,7 +73,11 @@ functions:
     handler: delete.main
     events:
       - http:
-          path: notes/{id}
+          path: quizzes/{id}
           method: delete
           cors: true
           authorizer: aws_iam
+
+# this resource is a CloudFormation template configuration for API Gateway for error handling
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
