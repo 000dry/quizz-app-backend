@@ -1,3 +1,5 @@
+// TODO: was this the from the scaffolding?? there's no way this is being used
+
 export const hello = async (event, context) => {
   return {
     statusCode: 200,

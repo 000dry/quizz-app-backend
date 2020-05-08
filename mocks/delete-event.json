@@ -1,5 +1,7 @@
 {
-    "body": "{\"content\":\"hello world\"}",
+    "pathParameters": {
+      "id": "64218360-915f-11ea-a809-0bd3112e9050"
+    },
     "requestContext": {
       "identity": {
         "cognitoIdentityId": "USER-SUB-1234"
