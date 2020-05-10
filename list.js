@@ -1,5 +1,6 @@
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import paramLogger from "./libs/param-logger";
 
 export const main = handler(async (event, context) => {
     //KeyConditionExpression will match our paramater :userId given to data in userId field of our db
@@ -12,7 +13,9 @@ export const main = handler(async (event, context) => {
     }
   };
 
+  paramLogger("LIST", params);
   const result = await dynamoDb.query(params);
+  console.log("RESULT from DB query for LIST action: ", result);
 
   // return the matching list of items in response body (as array)
   return result.Items;

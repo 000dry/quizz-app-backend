@@ -1,5 +1,6 @@
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import paramLogger from "./libs/param-logger";
 
 export const main = handler(async (event, context) => {
 //same set up as 'get' but more kill-y
@@ -10,6 +11,8 @@ export const main = handler(async (event, context) => {
       quizId: event.pathParameters.id
     }
   };
+
+  paramLogger("DELETE", params);
 
   await dynamoDb.delete(params);
 

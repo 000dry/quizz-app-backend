@@ -1,6 +1,7 @@
 import * as uuid from "uuid";
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import paramLogger from "./libs/param-logger";
 
 export const main = handler(async (event, context) => {
   //form data attached to request event
@@ -16,6 +17,9 @@ export const main = handler(async (event, context) => {
       createdAt: Date.now()
     }
   };
+
+  paramLogger("CREATE", params);
+
   //post payload to db
   await dynamoDb.put(params);
   //return Item data

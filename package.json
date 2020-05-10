@@ -1,7 +1,7 @@
 {
   "name": "quizz-app-backend",
   "version": "1.1.0",
-  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "description": "quizzy boi",
   "main": "handler.js",
   "scripts": {
     "test": "serverless-bundle test"

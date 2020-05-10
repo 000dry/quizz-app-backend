@@ -1,5 +1,6 @@
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import paramLogger from "./libs/param-logger";
 
 export const main = handler(async (event, context) => {
   const data = JSON.parse(event.body);
@@ -18,6 +19,8 @@ export const main = handler(async (event, context) => {
     //ReturnValues specifies what you want to have returned from this request - in our instance, ALL_NEW responds with everything that has changed after the update
     ReturnValues: "ALL_NEW"
   };
+
+  paramLogger("UPDATE", params);
 
   await dynamoDb.update(params);
 
